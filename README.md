@@ -17,7 +17,7 @@ easySig is a tailored-miniversion of moniSig, designed for schedulable monitorin
 - "filter string": see PCAP lib.
 
 # Example:
-- To capture the ip packages on any device, without package number limitation, only for 30 seconds, and the ToS value should be 0x20.
+- To capture the ip packages on any device, without package number limitation, only for 30 seconds, and the port is 5678 and ToS value should be 0x20.
 ```
-./easySig "\*" 0 30 "(port 5678) and (ip[1] & 0xfc ==0x20)"
+./easySig "*" 0 30 "(port 5678) and (ip[1] & 0xfc ==0x20)"
 ```
