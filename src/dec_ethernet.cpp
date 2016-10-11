@@ -44,7 +44,7 @@ u_int16_t decode_ethernet
     /* check to see if we have an ip packet */
     if (ether_type == ETHERTYPE_IP)
     {
-        sprintf(print,"IP: ");
+        sprintf(print,"%s IP: ", print);
     }else  if (ether_type == ETHERTYPE_ARP)
     {
         //fprintf(stdout,"(ARP)");

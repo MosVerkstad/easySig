@@ -30,6 +30,7 @@
 #include "prt_ethernet.h"
 #include "prt_ip.h"
 #include "prt_icmp.h"
+#include "ctl_ts.h"
 
 #ifndef MAX_PRINT_BUFF
 #define MAX_PRINT_BUFF 240

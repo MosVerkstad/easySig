@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lpcap -lrt -pthread
+CFLAGS=-lpcap -lrt
 CPPFILES=*.cpp
 HFILES=-I.
 OFILE=easySig

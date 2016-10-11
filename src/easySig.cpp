@@ -33,8 +33,7 @@ void easySig_callback(u_char *args,const struct pcap_pkthdr* pkthdr,const u_char
 {
     /* define the print buff, which will be used after decoding. */
     char print[MAX_PRINT_BUFF];
-    int sec = (pkthdr->ts.tv_sec + 7200) % 86400;
-    printf("%02d:%02d:%02d ", sec / 3600, (sec % 3600) / 60, sec % 60);
+    printTimeStamp(pkthdr, print);
     
     /* start to decode ethernet header, and continue according to type. */
     switch (decode_ethernet(args,pkthdr,packet,print))
@@ -129,8 +128,8 @@ int main(int argc,char **argv)
     }
 
     /* grab a device to peak into... */
-    if (argv[1] == "*") dev = argv[1];
-    else dev = pcap_lookupdev(errbuf);
+    if (strcmp(argv[1], "*") == 0) { dev = pcap_lookupdev(errbuf); }
+    else { dev = argv[1]; }
     if(dev == NULL)
     { printf("%s\n",errbuf); exit(1); }
 
