@@ -31,6 +31,7 @@
 #include "prt_ip.h"
 #include "prt_icmp.h"
 #include "ctl_ts.h"
+#include "dev_if.h"
 
 #ifndef MAX_PRINT_BUFF
 #define MAX_PRINT_BUFF 240

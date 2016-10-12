@@ -111,7 +111,8 @@ void termHandler_callback(int sig)
 
 int main(int argc,char **argv)
 {
-    char *dev;                  /* device name, from argv[1] */
+    char* dev;                  /* device name, from argv[1] */
+    char getDev[64];
     char errbuf[PCAP_ERRBUF_SIZE];
     /* pcap_t* descr; set it to global variant for signal*/
     struct bpf_program fp;      /* hold compiled program     */
@@ -128,7 +129,9 @@ int main(int argc,char **argv)
     }
 
     /* grab a device to peak into... */
-    if (strcmp(argv[1], "*") == 0) { dev = pcap_lookupdev(errbuf); }
+    getDev[0] = '\0';
+    dev = getDev;
+    if (strcmp(argv[1], "*") == 0) { getActiveDev(dev); }
     else { dev = argv[1]; }
     if(dev == NULL)
     { printf("%s\n",errbuf); exit(1); }
