@@ -21,5 +21,3 @@ easySig is a tailored-miniversion of moniSig, designed for schedulable monitorin
 ```
 ./easySig "*" 0 30 "(port 5678) and (ip[1] & 0xfc ==0x20)"
 ```
-
-> Contact information: Shirley.Mosverkstad@gmail.com
